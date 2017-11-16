@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 A3</title>
+	<meta name = "viewport" content = "initial-scale=1, width=device-width">
+
+	<style>
+		body,html{
+			margin:0;
+			background:#d4145a;
+		}
+
+		.main-wrapper{
+			height:100%;
+			width:100%;
+			display:flex;
+			flex-wrap:wrap;
+			justify-content: space-around;
+			align-content: space-around;
+		}
+
+		.element{
+			background: #ffffff;
+			height:45vh;
+			margin-top:30px;
+			font-size:10vh;
+			text-align: center;
+			line-height: 40vh;
+		}
+
+		@media all and (min-width:1200px){
+			
+			.element{
+				width:23vw;
+			}
+			
+			.element:nth-child(6n-3){
+				margin-right:25vw;
+			}
+
+			.element:nth-child(6n-2){
+				margin-left:25vw;
+			}
+			
+			/*different from part A2 starts here*/
+			@keyframes animateZero{
+				0%{}
+				50%{transform:translateX(25vw);}
+				100%{}
+			}
+
+			.element:nth-child(6n-5),.element:nth-child(6n-4),.element:nth-child(6n-3){
+				animation:animateZero 3s ease-in infinite;
+			}
+			
+			@keyframes animatePi{
+				0%{}
+				50%{transform:translateX(-25vw);}
+				100%{}
+			}
+
+			.element:nth-child(6n-2),.element:nth-child(6n-1),.element:nth-child(6n){
+				animation:animatePi 3s ease-in infinite;
+			}
+
+		}
+
+		@media all and (max-width:1200px) and (min-width:900px){
+			.element{
+				width:30vw;
+			}
+
+			.element:nth-child(4n-2){
+				margin-right:calc((100/3)*1vw);
+			}
+
+			.element:nth-child(4n-1){
+				margin-left:calc((100/3)*1vw);
+			}
+
+			/*different from part A2 starts here*/
+			@keyframes animateZero{
+				0%{}
+				50%{transform:translateX(calc((100/3)*1vw));}
+				100%{}
+			}
+
+			.element:nth-child(4n-3), .element:nth-child(4n-2){
+				animation:animateZero 3s ease-in infinite;
+			}
+
+			@keyframes animatePi{
+				0%{}
+				50%{transform:translateX(calc((100/3)*-1vw));}
+				100%{}
+			}
+
+			.element:nth-child(4n-1), .element:nth-child(4n){
+				animation:animatePi 3s ease-in infinite;
+			}
+		}
+
+		@media all and (max-width:900px) and (min-width:600px){
+			.element{
+				width:40vw;
+			}
+
+			.element:nth-child(odd){
+				margin-right: 50vw;
+			}
+
+			.element:nth-child(even){
+				margin-left: 50vw;
+			}
+
+			/*different from part A2 starts here*/
+
+			@keyframes animateZero{
+				0%{}
+				50%{transform:translateX(50vw);}
+				100%{}
+			}
+
+			.element:nth-child(odd){
+				animation:animateZero 3s ease-in infinite;
+			}
+
+			@keyframes animatePi{
+				0%{}
+				50%{transform:translateX(-50vw);}
+				100%{}
+			}
+
+			.element:nth-child(even){
+				animation: animatePi 3s ease-in infinite;
+			}
+		}
+
+		@media all and (max-width:600px){
+			.element{
+				width:80vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class = "main-wrapper">
+		<div class="element">A</div>
+		<div class="element">B</div>
+		<div class="element">C</div>
+		<div class="element">D</div>
+		<div class="element">E</div>
+		<div class="element">F</div>
+		<div class="element">G</div>
+		<div class="element">H</div>
+		<div class="element">I</div>
+		<div class="element">J</div>
+		<div class="element">K</div>
+		<div class="element">L</div>
+	</div>
+</body>
+</html>
