@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 B1</title>
+	<style>
+		.container{
+			position:absolute;
+			top:20%;
+			width:100%;
+			display:flex;
+			justify-content: space-around;
+			font-size:20px;
+			text-align: center;
+		}
+
+		.keys{
+			height:50px;
+			width:50px;
+			background:rgba(0,0,0,0.7);
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class="keys" id = "a">A<br><span style = "font-size:10px;">hihat</span><audio src = "../B/sounds/A.wav" id = "aSound"></audio></div>
+		<div class="keys" id = "s">S<br><span style = "font-size:10px;">kick</span><audio src = "../B/sounds/S.wav" id = "sSound"></div>
+		<div class="keys" id = "d">D<br><span style = "font-size:10px;">openhat</span><audio src = "../B/sounds/D.wav" id = "dSound"></div>
+		<div class="keys" id = "f">F<br><span style = "font-size:10px;">snare</span><audio src = "../B/sounds/F.wav" id = "fSound"></div>
+		<div class="keys" id = "g">G<br><span style = "font-size:10px;">clap</span><audio src = "../B/sounds/G.wav" id = "gSound"></div>
+		<div class="keys" id = "h">H<br><span style = "font-size:10px;">crash</span><audio src = "../B/sounds/H.wav" id = "hSound"></div>
+		<div class="keys" id = "j">J<br><span style = "font-size:10px;">perc</span><audio src = "../B/sounds/J.wav" id = "jSound"></div>
+		<div class="keys" id = "k">K<br><span style = "font-size:10px;">ride</span><audio src = "../B/sounds/K.wav" id = "kSound"></div>
+		<div class="keys" id = "l">L<br><span style = "font-size:10px;">tom</span><audio src = "../B/sounds/L.wav" id = "lSound"></div>
+	</div>
+	
+	<script>
+		document.addEventListener("keydown", function(){
+			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
+			
+			switch(event.keyCode){
+				case keyList.A : a.style.background = "rgba(0,0,0,0.2)";
+				aSound.pause();
+				aSound.currentTime = 0;
+				aSound.play();
+				 break;
+
+				case keyList.S : s.style.background = "rgba(0,0,0,0.2)";
+				sSound.pause();
+				sSound.currentTime = 0;
+				sSound.play();
+				 break;
+
+				case keyList.D : d.style.background = "rgba(0,0,0,0.2)";
+				dSound.pause();
+				dSound.currentTime = 0;
+				dSound.play();
+				 break;
+
+				case keyList.F : f.style.background = "rgba(0,0,0,0.2)";
+				fSound.pause();
+				fSound.currentTime = 0;
+				fSound.play();
+				 break;
+
+				case keyList.G : g.style.background = "rgba(0,0,0,0.2)";
+				gSound.pause();
+				gSound.currentTime = 0;
+				gSound.play();
+				 break;
+
+				case keyList.H : h.style.background = "rgba(0,0,0,0.2)";
+				hSound.pause();
+				hSound.currentTime = 0;
+				hSound.play();
+				 break;
+
+				case keyList.J : j.style.background = "rgba(0,0,0,0.2)";
+				jSound.pause();
+				jSound.currentTime = 0;
+				jSound.play();
+				 break;
+
+				case keyList.K : k.style.background = "rgba(0,0,0,0.2)";
+				kSound.pause();
+				kSound.currentTime = 0;
+				kSound.play();
+				 break;
+
+				case keyList.L : l.style.background = "rgba(0,0,0,0.2)";
+				lSound.pause();
+				lSound.currentTime = 0;
+				lSound.play();
+				 break;
+
+			}
+		});
+
+		document.addEventListener("keyup", function(){
+			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
+			
+			switch(event.keyCode){
+				case keyList.A : a.style.background = "rgba(0,0,0,0.7)";
+				 break;
+
+				case keyList.S : s.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.D : d.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.F : f.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.G : g.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.H : h.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.J : j.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.K : k.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+				case keyList.L : l.style.background = "rgba(0,0,0,0.7)"
+				 break;
+
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 B2</title>
+	<style>
+		body,html{
+			margin:0;
+		}
+
+		.wrapper{
+			height:100vh;
+			width:100vh;
+			background: orange;
+			display:flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.clock{
+			height:80vh;
+			width:80vh;
+			border:5vh solid white;
+			border-radius:90vh;	
+			background: red;
+		}
+
+		.hour{
+			height:25vh;
+			position:relative;
+			top:15vh;
+			width:5px;
+			background: black;
+			transform-origin: 50% 100%;
+		}
+
+		.minutes{
+			height:35vh;
+			position:relative;
+			top:-20vh;
+			width:5px;
+			background: black;
+			transform-origin: 50% 100%;
+		}
+
+		.seconds{
+			height:35vh;
+			top:-55vh;
+			position:relative;
+			width:2px;
+			background: black;
+			transform-origin: 50% 100%;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div class = "wrapper">
+			<div class = "clock">
+				<div class = "hour"></div>
+				<div class = "minutes"></div>
+				<div class = "seconds"></div>
+			</div>
+		</div>
+	</center>
+
+	<script>
+		setInterval(function(){
+			var time = new Date();
+			var hour = time.getHours();
+			var minutes = time.getMinutes();
+			var seconds = time.getSeconds();
+			
+			var hourAngle, minutesAngle, secondsAngle;
+			
+			if(hour <= 12) hourAngle = (hour/12)*360;
+			else if(hour > 12) hourAngle = ((hour-12)/12)*360;
+
+			minutesAngle = (minutes/60)*360;
+
+			secondsAngle = (seconds/60)*360;
+
+			document.getElementsByClassName("hour")[0].style.transform = "rotateZ("+hourAngle+"deg)";
+			document.getElementsByClassName("minutes")[0].style.transform = "rotateZ("+minutesAngle+"deg)";
+			document.getElementsByClassName("seconds")[0].style.transform = "rotateZ("+secondsAngle+"deg)";
+		}, 500);
+	</script>
+</body>
+</html>

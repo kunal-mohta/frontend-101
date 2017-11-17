@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 A4</title>
+	<meta name = "viewport" value = "initial-scale=1, width=device-width">
+
+	<style>
+		body,html{
+			margin:0;
+			color:white;
+			font-size:30px;
+		}
+
+		nav{
+			background: #d4145a;
+			height:10vh;
+			width:100%;
+			line-height: 10vh;
+			text-align: center;
+		}
+		
+		@media all and (min-width:1000px){
+			.logo{
+				float:left;
+				height:10vh;
+				width:200px;
+			}
+			
+			.link-container{
+				float:right;
+				height:10vh;
+			}
+
+			.link{
+				float:right;
+				height:10vh;
+				width:200px;
+			}
+
+			.drop{
+				display:none;
+			}
+		}
+
+		@media all and (max-width:1000px){
+			.logo{
+				display:inline-block;
+				font-size:5vh;
+			}
+
+			.drop{
+				float:left;
+				background: url('drop.svg') no-repeat;
+				background-size: 10vh;
+				height:10vh;
+				width:200px;
+			}
+
+			.link-container{
+				background: #d4145a;
+				position:absolute;
+				top:10vh;
+				width:400px;
+				font-size:5vh;
+				display:none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class = "drop"></div>
+		<div class = "logo">Logo</div>
+		
+		<div class = "link-container">
+			<div class="link">Link</div>
+			<div class="link">Link</div>
+			<div class="link">Link</div>
+			<div class="link">Link</div>
+		</div>
+	</nav>
+
+	<!-- this part was not given in the instructions for the assignment -->
+
+	<script>
+		var navOpen = 0;
+
+		document.getElementsByClassName("drop")[0].addEventListener("click", function(){
+			if(navOpen == 0){
+				document.getElementsByClassName("link-container")[0].style.display = "block";
+				navOpen = 1;
+			}
+			else{
+				document.getElementsByClassName("link-container")[0].style.display = "none";
+				navOpen = 0;
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 A5</title>
+	<meta name = "viewport" value = "initial-scale=1, width=device-width">
+	<style>
+		body{
+			color:white;
+			font-size:150%;
+		}
+		
+		/*button 1 starts here*/
+		.button-1{
+			position:absolute;
+			top:40%;
+			left:30%;
+			perspective:200px;
+			display:flex;
+		}
+
+		.b1-face{
+			text-align: center;
+			line-height: 50px;
+			height:50px;
+			width:100px;
+			background: red;
+			border:2px solid black;
+			transform-origin: 0 0;
+			transform:rotateY(-20deg);
+			transition:transform 0.3s;
+		}
+
+		.b1-side{
+			height:50px;
+			width:100px;
+			background: red;
+			border:2px solid black;
+			transform-origin: 0 0;
+			transform:translateZ(34px) translateX(-6.5px) rotateY(80deg);
+			transition: transform 0.3s;
+		}
+
+		.b1-face:hover{
+			transform:rotateY(0deg);
+		}
+		
+		.b1-face:hover ~ .b1-side{
+			transform:rotateY(90deg);
+		}
+		/*button 1 ends here*/
+		
+		/*button 2 starts here*/
+		.button-2{
+			position:absolute;
+			top:40%;
+			left:60%;
+			perspective:200px;
+			perspective-origin: 180px -50px;
+		}
+
+		.b2-face{
+			position:absolute;
+			text-align: center;
+			line-height: 50px;
+			height:50px;
+			width:100px;
+			background: red;
+			border:2px solid black;
+			transform-origin: 50px 25px 20px;
+			transform: translateZ(20px);
+			transition:transform 0.5s
+		}
+		
+		.b2-face:hover{
+			transform: translateZ(0px);
+		}
+
+		.b2-right{
+			height:50px;
+			width:50px;
+			background: red;
+			border:2px solid black;
+			position:absolute;
+			left:102px;
+			transform-origin: 0 0;
+			transform: translateZ(20px) rotateY(90deg);
+			transition:transform 0.5s
+		}
+		
+		.b2-face:hover ~ .b2-right{
+			transform: translateZ(0px) rotateY(0deg);
+		}
+
+		.b2-left{
+			height:50px;
+			width:50px;
+			background: red;
+			border:2px solid black;
+			position:absolute;
+			transform-origin: 0 0;
+			transform: translateZ(20px) rotateY(90deg);
+			transition:transform 0.5s
+		}
+		
+		.b2-face:hover ~ .b2-left{
+			transform: translateZ(0px) rotateY(180deg);
+		}
+
+		.b2-top{
+			height:50px;
+			width:100px;
+			background: red;
+			border:2px solid black;
+			position:absolute;
+			transform-origin: 0 0;
+			transform: translateZ(20px) rotateX(-90deg);
+			transition:transform 0.5s
+		}
+		
+		.b2-face:hover ~ .b2-top{
+			transform: translateZ(0px) rotateX(-180deg);
+		}
+
+		.b2-bottom{
+			height:50px;
+			width:100px;
+			background: red;
+			border:2px solid black;
+			position:absolute;
+			transform-origin: 0 50px;
+			transform: translateZ(20px) rotateX(90deg);
+			transition:transform 0.5s
+		}
+		
+		.b2-face:hover ~ .b2-bottom{
+			transform: translateZ(0px) rotateX(180deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class = "button-1">
+		<div class = "b1-face">Button</div>
+		<div class = "b1-side"></div>
+	</div>
+
+	<div class = "button-2">
+		<div class = "b2-face" style = "z-index: 1;">Button</div>
+		<div class = "b2-right"></div>
+		<div class = "b2-left"></div>
+		<div class = "b2-top"></div>
+		<div class = "b2-bottom"></div>
+	</div>
+</body>
+</html>
