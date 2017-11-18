@@ -9,6 +9,7 @@
 			margin:0;
 			color:white;
 			font-size:30px;
+			font-family: sans-serif;
 		}
 
 		nav{
@@ -55,14 +56,48 @@
 				height:10vh;
 				width:200px;
 			}
-
+			
+			@keyframes hamburgerOpen{
+				from{left:-400px;}
+				to{left:0px;}
+			}
+			@-webkit-keyframes hamburgerOpen{
+				from{left:-400px;}
+				to{left:0px;}
+			}
+			@-moz-keyframes hamburgerOpen{
+				from{left:-400px;}
+				to{left:0px;}
+			}
+			@-o-keyframes hamburgerOpen{
+				from{left:-400px;}
+				to{left:0px;}
+			}
+			
+			@keyframes hamburgerClose{
+				from{left:0px;}
+				to{left:-400px;}
+			}
+			@-webkit-keyframes hamburgerClose{
+				from{left:0px;}
+				to{left:-400px;}
+			}
+			@-moz-keyframes hamburgerClose{
+				from{left:0px;}
+				to{left:-400px;}
+			}
+			@-o-keyframes hamburgerClose{
+				from{left:0px;}
+				to{left:-400px;}
+			}
 			.link-container{
 				background: #d4145a;
 				position:absolute;
 				top:10vh;
+				left:-400px;
 				width:400px;
 				font-size:5vh;
-				display:none;
+				height:90vh;
 			}
 		}
 	</style>
@@ -87,11 +122,17 @@
 
 		document.getElementsByClassName("drop")[0].addEventListener("click", function(){
 			if(navOpen == 0){
-				document.getElementsByClassName("link-container")[0].style.display = "block";
+				document.getElementsByClassName("link-container")[0].style.animation = 'hamburgerOpen 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.webkitAnimation = 'hamburgerOpen 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.mozAnimation = 'hamburgerOpen 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.oAnimation = 'hamburgerOpen 0.1s linear forwards';
 				navOpen = 1;
 			}
 			else{
-				document.getElementsByClassName("link-container")[0].style.display = "none";
+				document.getElementsByClassName("link-container")[0].style.animation = 'hamburgerClose 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.webkitAnimation = 'hamburgerClose 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.mozAnimation = 'hamburgerClose 0.1s linear forwards';
+				document.getElementsByClassName("link-container")[0].style.oAnimation = 'hamburgerClose 0.1s linear forwards';
 				navOpen = 0;
 			}
 		});

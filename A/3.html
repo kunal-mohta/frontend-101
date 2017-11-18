@@ -8,6 +8,7 @@
 		body,html{
 			margin:0;
 			background:#d4145a;
+			font-family: sans-serif;
 		}
 
 		.main-wrapper{
@@ -25,7 +26,7 @@
 			margin-top:30px;
 			font-size:10vh;
 			text-align: center;
-			line-height: 40vh;
+			line-height: 42vh;
 		}
 
 		@media all and (min-width:1200px){
@@ -48,12 +49,42 @@
 				50%{transform:translateX(25vw);}
 				100%{transform:translateX(0vw);}
 			}
+			@-webkit-keyframes animateZeroA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(25vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-moz-keyframes animateZeroA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(25vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-o-keyframes animateZeroA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(25vw);}
+				100%{transform:translateX(0vw);}
+			}
 
 			.element:nth-child(6n-5),.element:nth-child(6n-4),.element:nth-child(6n-3){
 				animation:animateZeroA 3s ease-in infinite;
 			}
 			
 			@keyframes animatePiA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-25vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-webkit-keyframes animatePiA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-25vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-moz-keyframes animatePiA{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-25vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-o-keyframes animatePiA{
 				0%{transform:translateX(0vw);}
 				50%{transform:translateX(-25vw);}
 				100%{transform:translateX(0vw);}
@@ -84,12 +115,42 @@
 				50%{transform:translateX(calc((100/3)*1vw));}
 				100%{transform:translateX(0vw);}
 			}
+			@-webkit-keyframes animateZeroB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*1vw));}
+				100%{transform:translateX(0vw);}
+			}
+			@-moz-keyframes animateZeroB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*1vw));}
+				100%{transform:translateX(0vw);}
+			}
+			@-o-keyframes animateZeroB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*1vw));}
+				100%{transform:translateX(0vw);}
+			}
 
 			.element:nth-child(4n-3), .element:nth-child(4n-2){
 				animation:animateZeroB 3s ease-in infinite;
 			}
 
 			@keyframes animatePiB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*-1vw));}
+				100%{transform:translateX(0vw);}
+			}
+			@-webkit-keyframes animatePiB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*-1vw));}
+				100%{transform:translateX(0vw);}
+			}
+			@-moz-keyframes animatePiB{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(calc((100/3)*-1vw));}
+				100%{transform:translateX(0vw);}
+			}
+			@-o-keyframes animatePiB{
 				0%{transform:translateX(0vw);}
 				50%{transform:translateX(calc((100/3)*-1vw));}
 				100%{transform:translateX(0vw);}
@@ -120,12 +181,42 @@
 				50%{transform:translateX(50vw);}
 				100%{}
 			}
+			@-webkit-keyframes animateZeroC{
+				0%{}
+				50%{transform:translateX(50vw);}
+				100%{}
+			}
+			@-moz-keyframes animateZeroC{
+				0%{}
+				50%{transform:translateX(50vw);}
+				100%{}
+			}
+			@-o-keyframes animateZeroC{
+				0%{}
+				50%{transform:translateX(50vw);}
+				100%{}
+			}
 
 			.element:nth-child(odd){
 				animation:animateZeroC 3s ease-in infinite;
 			}
 
 			@keyframes animatePiC{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-50vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-webkit-keyframes animatePiC{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-50vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-moz-keyframes animatePiC{
+				0%{transform:translateX(0vw);}
+				50%{transform:translateX(-50vw);}
+				100%{transform:translateX(0vw);}
+			}
+			@-o-keyframes animatePiC{
 				0%{transform:translateX(0vw);}
 				50%{transform:translateX(-50vw);}
 				100%{transform:translateX(0vw);}

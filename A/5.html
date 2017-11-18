@@ -7,6 +7,7 @@
 		body{
 			color:white;
 			font-size:150%;
+			font-family: sans-serif;
 		}
 		
 		/*button 1 starts here*/
@@ -27,7 +28,7 @@
 			border:2px solid black;
 			transform-origin: 0 0;
 			transform:rotateY(-20deg);
-			transition:transform 0.3s;
+			transition:transform 0.1s;
 		}
 
 		.b1-side{
@@ -37,11 +38,12 @@
 			border:2px solid black;
 			transform-origin: 0 0;
 			transform:translateZ(34px) translateX(-6.5px) rotateY(80deg);
-			transition: transform 0.3s;
+			transition: transform 0.1s;
 		}
 
 		.b1-face:hover{
 			transform:rotateY(0deg);
+			cursor:pointer;
 		}
 		
 		.b1-face:hover ~ .b1-side{
@@ -68,11 +70,12 @@
 			border:2px solid black;
 			transform-origin: 50px 25px 20px;
 			transform: translateZ(20px);
-			transition:transform 0.5s
+			transition:transform 0.2s;
 		}
 		
 		.b2-face:hover{
 			transform: translateZ(0px);
+			cursor:pointer;
 		}
 
 		.b2-right{
@@ -84,7 +87,7 @@
 			left:102px;
 			transform-origin: 0 0;
 			transform: translateZ(20px) rotateY(90deg);
-			transition:transform 0.5s
+			transition:transform 0.2s;
 		}
 		
 		.b2-face:hover ~ .b2-right{
@@ -99,7 +102,7 @@
 			position:absolute;
 			transform-origin: 0 0;
 			transform: translateZ(20px) rotateY(90deg);
-			transition:transform 0.5s
+			transition:transform 0.2s;
 		}
 		
 		.b2-face:hover ~ .b2-left{
@@ -114,7 +117,7 @@
 			position:absolute;
 			transform-origin: 0 0;
 			transform: translateZ(20px) rotateX(-90deg);
-			transition:transform 0.5s
+			transition:transform 0.2s;
 		}
 		
 		.b2-face:hover ~ .b2-top{
@@ -129,7 +132,7 @@
 			position:absolute;
 			transform-origin: 0 50px;
 			transform: translateZ(20px) rotateX(90deg);
-			transition:transform 0.5s
+			transition:transform 0.2s;
 		}
 		
 		.b2-face:hover ~ .b2-bottom{
