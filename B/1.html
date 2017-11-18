@@ -35,7 +35,9 @@
 	</div>
 	
 	<script>
-		document.addEventListener("keydown", function(){
+		document.addEventListener("keydown", function(event){
+			if(!event) event = window.event;
+
 			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
 			
 			switch(event.keyCode){
@@ -96,7 +98,9 @@
 			}
 		});
 
-		document.addEventListener("keyup", function(){
+		document.addEventListener("keyup", function(event){
+			if(!event) event = window.event;
+			
 			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
 			
 			switch(event.keyCode){
