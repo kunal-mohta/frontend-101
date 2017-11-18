@@ -43,24 +43,24 @@
 			}
 			
 			/*different from part A2 starts here*/
-			@keyframes animateZero{
-				0%{}
+			@keyframes animateZeroA{
+				0%{transform:translateX(0vw);}
 				50%{transform:translateX(25vw);}
-				100%{}
+				100%{transform:translateX(0vw);}
 			}
 
 			.element:nth-child(6n-5),.element:nth-child(6n-4),.element:nth-child(6n-3){
-				animation:animateZero 3s ease-in infinite;
+				animation:animateZeroA 3s ease-in infinite;
 			}
 			
-			@keyframes animatePi{
-				0%{}
+			@keyframes animatePiA{
+				0%{transform:translateX(0vw);}
 				50%{transform:translateX(-25vw);}
-				100%{}
+				100%{transform:translateX(0vw);}
 			}
 
 			.element:nth-child(6n-2),.element:nth-child(6n-1),.element:nth-child(6n){
-				animation:animatePi 3s ease-in infinite;
+				animation:animatePiA 3s ease-in infinite;
 			}
 
 		}
@@ -79,24 +79,24 @@
 			}
 
 			/*different from part A2 starts here*/
-			@keyframes animateZero{
-				0%{}
+			@keyframes animateZeroB{
+				0%{transform:translateX(0vw);}
 				50%{transform:translateX(calc((100/3)*1vw));}
-				100%{}
+				100%{transform:translateX(0vw);}
 			}
 
 			.element:nth-child(4n-3), .element:nth-child(4n-2){
-				animation:animateZero 3s ease-in infinite;
+				animation:animateZeroB 3s ease-in infinite;
 			}
 
-			@keyframes animatePi{
-				0%{}
+			@keyframes animatePiB{
+				0%{transform:translateX(0vw);}
 				50%{transform:translateX(calc((100/3)*-1vw));}
-				100%{}
+				100%{transform:translateX(0vw);}
 			}
 
 			.element:nth-child(4n-1), .element:nth-child(4n){
-				animation:animatePi 3s ease-in infinite;
+				animation:animatePiB 3s ease-in infinite;
 			}
 		}
 
@@ -115,24 +115,24 @@
 
 			/*different from part A2 starts here*/
 
-			@keyframes animateZero{
+			@keyframes animateZeroC{
 				0%{}
 				50%{transform:translateX(50vw);}
 				100%{}
 			}
 
 			.element:nth-child(odd){
-				animation:animateZero 3s ease-in infinite;
+				animation:animateZeroC 3s ease-in infinite;
 			}
 
-			@keyframes animatePi{
-				0%{}
+			@keyframes animatePiC{
+				0%{transform:translateX(0vw);}
 				50%{transform:translateX(-50vw);}
-				100%{}
+				100%{transform:translateX(0vw);}
 			}
 
 			.element:nth-child(even){
-				animation: animatePi 3s ease-in infinite;
+				animation: animatePiC 3s ease-in infinite;
 			}
 		}
 
