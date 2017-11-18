@@ -3,6 +3,10 @@
 <head>
 	<title>frontend-101 B1</title>
 	<style>
+		body{
+			font-family: sans-serif;
+		}
+
 		.container{
 			position:absolute;
 			top:20%;
@@ -11,13 +15,17 @@
 			justify-content: space-around;
 			font-size:20px;
 			text-align: center;
+			perspective: 100px;
 		}
 
 		.keys{
-			height:50px;
-			width:50px;
-			background:rgba(0,0,0,0.7);
-			color:white;
+			height:60px;
+			width:60px;
+			background:rgba(0,0,0,1);
+			color:#bfbfbf;
+			padding: 3px 3px 0 3px;
+			border-radius: 5px;
+			perspective:100px; 
 		}
 	</style>
 </head>
@@ -41,55 +49,82 @@
 			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
 			
 			switch(event.keyCode){
-				case keyList.A : a.style.background = "rgba(0,0,0,0.2)";
+				case keyList.A : a.style.height = "56px";
+				a.style.width = "56px";
+				a.style.border = "solid red 2px";
+				a.style.color = "red";
 				aSound.pause();
 				aSound.currentTime = 0;
 				aSound.play();
 				 break;
 
-				case keyList.S : s.style.background = "rgba(0,0,0,0.2)";
+				case keyList.S : s.style.height = "56px";
+				s.style.width = "56px";
+				s.style.border = "solid red 2px";
+				s.style.color = "red";
 				sSound.pause();
 				sSound.currentTime = 0;
 				sSound.play();
 				 break;
 
-				case keyList.D : d.style.background = "rgba(0,0,0,0.2)";
+				case keyList.D : d.style.height = "56px";
+				d.style.width = "56px";
+				d.style.border = "solid red 2px";
+				d.style.color = "red";
 				dSound.pause();
 				dSound.currentTime = 0;
 				dSound.play();
 				 break;
 
-				case keyList.F : f.style.background = "rgba(0,0,0,0.2)";
+				case keyList.F : f.style.height = "56px";
+				f.style.width = "56px";
+				f.style.border = "solid red 2px";
+				f.style.color = "red";
 				fSound.pause();
 				fSound.currentTime = 0;
 				fSound.play();
 				 break;
 
-				case keyList.G : g.style.background = "rgba(0,0,0,0.2)";
+				case keyList.G : g.style.height = "56px";
+				g.style.width = "56px";
+				g.style.border = "solid red 2px";
+				g.style.color = "red";
 				gSound.pause();
 				gSound.currentTime = 0;
 				gSound.play();
 				 break;
 
-				case keyList.H : h.style.background = "rgba(0,0,0,0.2)";
+				case keyList.H : h.style.height = "56px";
+				h.style.width = "56px";
+				h.style.border = "solid red 2px";
+				h.style.color = "red";
 				hSound.pause();
 				hSound.currentTime = 0;
 				hSound.play();
 				 break;
 
-				case keyList.J : j.style.background = "rgba(0,0,0,0.2)";
+				case keyList.J : j.style.height = "56px";
+				j.style.width = "56px";
+				j.style.border = "solid red 2px";
+				j.style.color = "red";
 				jSound.pause();
 				jSound.currentTime = 0;
 				jSound.play();
 				 break;
 
-				case keyList.K : k.style.background = "rgba(0,0,0,0.2)";
+				case keyList.K : k.style.height = "56px";
+				k.style.width = "56px";
+				k.style.border = "solid red 2px";
+				k.style.color = "red";
 				kSound.pause();
 				kSound.currentTime = 0;
 				kSound.play();
 				 break;
 
-				case keyList.L : l.style.background = "rgba(0,0,0,0.2)";
+				case keyList.L : l.style.height = "56px";
+				l.style.width = "56px";
+				l.style.border = "solid red 2px";
+				l.style.color = "red";
 				lSound.pause();
 				lSound.currentTime = 0;
 				lSound.play();
@@ -104,31 +139,58 @@
 			var keyList = {A:65,S:83,D:68,F:70,G:71,H:72,J:74,K:75,L:76}
 			
 			switch(event.keyCode){
-				case keyList.A : a.style.background = "rgba(0,0,0,0.7)";
+				case keyList.A : a.style.height = "60px";
+				a.style.width = "60px";
+				a.style.border = "";
+				a.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.S : s.style.background = "rgba(0,0,0,0.7)"
+				case keyList.S : s.style.height = "60px";
+				s.style.width = "60px";
+				s.style.border = "";
+				s.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.D : d.style.background = "rgba(0,0,0,0.7)"
+				case keyList.D : d.style.height = "60px";
+				d.style.width = "60px";
+				d.style.border = "";
+				d.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.F : f.style.background = "rgba(0,0,0,0.7)"
+				case keyList.F : f.style.height = "60px";
+				f.style.width = "60px";
+				f.style.border = "";
+				f.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.G : g.style.background = "rgba(0,0,0,0.7)"
+				case keyList.G : g.style.height = "60px";
+				g.style.width = "60px";
+				g.style.border = "";
+				g.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.H : h.style.background = "rgba(0,0,0,0.7)"
+				case keyList.H : h.style.height = "60px";
+				h.style.width = "60px";
+				h.style.border = "";
+				h.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.J : j.style.background = "rgba(0,0,0,0.7)"
+				case keyList.J : j.style.height = "60px";
+				j.style.width = "60px";
+				j.style.border = "";
+				j.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.K : k.style.background = "rgba(0,0,0,0.7)"
+				case keyList.K : k.style.height = "60px";
+				k.style.width = "60px";
+				k.style.border = "";
+				k.style.color = "#bfbfbf";
 				 break;
 
-				case keyList.L : l.style.background = "rgba(0,0,0,0.7)"
+				case keyList.L : l.style.height = "60px";
+				l.style.width = "60px";
+				l.style.border = "";
+				l.style.color = "#bfbfbf";
 				 break;
 
 			}
