@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 B3</title>
+	<meta name = "viewport" content = "initial-scale=0,width=device-width">
+	<style>
+		body,html{
+			margin:0;
+			background: orange;
+			font-family: sans-serif;
+			font-size: 20px;
+		}	
+
+		.list-wrapper{
+			position:absolute;
+			top:10vh;
+			left:38vw;
+			width:24vw;
+			box-shadow: 7px 7px rgba(0,0,0,0.2);
+		}
+		
+		table{
+			width:100%;
+		}
+
+		td{
+			background: white;
+			padding:20px 0px;
+			border-color: black;
+			border-style: solid;
+			border-width: 0 0.5px 0.5px 0;
+		}
+
+		.list-checkbox{
+			padding:0 20px;
+		}
+		
+		.list-item{
+			padding-left:20px;
+			padding-right:20px;
+			border-color: black;
+			border-style: solid;
+			border-width: 0 0 0.5px 0;	
+		}
+
+		input{
+			transform: scale(1.5);
+		}
+	</style>
+</head>
+<body>
+	
+	<div class = "list-wrapper">
+		<table cellspacing="0">
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="0"></center></td>
+				<td class = "list-item">This is and input layout</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="1"></center></td>
+				<td class = "list-item">Check one item</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="2"></center></td>
+				<td class = "list-item">Hold down your shift key</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="3"></center></td>
+				<td class = "list-item">Check a lower item</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="4"></center></td>
+				<td class = "list-item">Everything else in between should also be set to selected</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="5"></center></td>
+				<td class = "list-item">Try doing it without libraries</td>
+			</tr>
+			<tr>
+				<td class = "list-checkbox"><center><input type = "checkbox" data-index="6"></center></td>
+				<td class = "list-item">Just regular JavaScript</td>
+			</tr>
+		</table>
+	</div>
+
+	<script>
+		var isShift = 0;//determines whether shift is pressed and held
+		var alreadySelectIndex;
+
+		document.addEventListener("keydown", function(event){
+			if(!event) event = window.event;
+
+			if(event.keyCode == 16){
+				isShift = 1;
+			}
+		});
+
+		document.addEventListener("keyup", function(event){
+			isShift = 0;
+		});
+
+		for(i=0;i<document.getElementsByTagName("input").length;i++){//this loop is to add onchange event to all the checkboxes
+			document.getElementsByTagName("input")[i].addEventListener("change", function(){
+				if(this.checked == false) alreadySelectIndex = -1;//shift select should not work if just before the item was unselected
+
+				else{
+					if(isShift == 1 && alreadySelectIndex > -1){
+						var currentSelectIndex = this.dataset.index;
+						
+							if(currentSelectIndex < alreadySelectIndex){
+								for(l=currentSelectIndex;l<=alreadySelectIndex;l++){
+									document.getElementsByTagName("input")[l].checked = true;
+								}
+							}
+							else if(currentSelectIndex > alreadySelectIndex){
+								for(l=alreadySelectIndex;l<=currentSelectIndex;l++){
+									document.getElementsByTagName("input")[l].checked = true;
+								}	
+							}
+
+						alreadySelectIndex = this.dataset.index;//once selection is done, this item should turn to the already selected item
+						
+					}
+
+					else{
+						alreadySelectIndex = this.dataset.index;
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>
