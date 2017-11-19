@@ -9,57 +9,71 @@
 		}
 		
 		@keyframes left-animate{
-			0%{stroke-dashoffset: 1625;fill:black;}
-			50%{stroke-dashoffset: 0;fill:black;}
+			0%{stroke-dashoffset: -1625;fill:black;}
+			70%{stroke-dashoffset: 0;fill:black;}
 			100%{stroke-dashoffset: 0;fill:white;}
 		}
 
-		.left{
-			fill:black;
+		.left-outline{
 			stroke-dasharray: 1625,1625;
-			animation:left-animate 1.2s ease-in forwards;
+			animation:left-animate 1.5s forwards;
+			animation-timing-function: cubic-bezier(.62,.51,.72,.12);
 		}
 
 		@keyframes middle-animate{
-			0%{stroke-dashoffset: 775;fill:black;}
-			50%{stroke-dashoffset: 0;fill:black;}
+			0%{stroke-dashoffset: -775;fill:black;}
+			70%{stroke-dashoffset: 0;fill:black;}
 			100%{stroke-dashoffset: 0;fill:#E91462;}
 		}
-		.middle{
+		.middle-outline{
 			stroke-dashoffset: 775;
 			fill:black;
 			stroke-dasharray: 775,775;
-			animation:middle-animate 1.2s ease-in forwards 0.3s;
+			animation:middle-animate 1.5s forwards 0.45s;
+			animation-timing-function: cubic-bezier(.62,.51,.72,.12);
 		}
 
 		@keyframes right-animate{
-			0%{stroke-dashoffset: 1050;fill:black;}
-			50%{stroke-dashoffset: 0;fill:black;}
+			0%{stroke-dashoffset: -1050;fill:black;}
+			70%{stroke-dashoffset: 0;fill:black;}
 			100%{stroke-dashoffset: 0;fill:white;}
 		}
-		.right{
+		.right-outline{
 			stroke-dashoffset: 1050;
 			fill:black;
 			stroke-dasharray: 1050,1050;
-			animation:right-animate 1.2s ease-in forwards 0.8s;
+			animation:right-animate 1.5s forwards 0.9s;
+			animation-timing-function: cubic-bezier(.62,.51,.72,.12);
 		}
 	</style>
 </head>
 <body>
 	<center>
-	<svg x="0px" y="0px" width="612px" height="792px">
-		<g id="Layer_1">
-			<rect stroke="#000000" stroke-miterlimit="10" width="612" height="795"/>
+		<svg x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792">
+<g id="Layer_2">
+	
+		<rect x="72" y="74.67" stroke="#000000" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" width="477.33" height="510"/>
+</g>
+<g id="Layer_1">
+	<g id="XMLID_1_">
+		<g>
+			<polygon class = "left-outline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" points="164.33,155.67 277,311 277,359 192.33,243.67 
+				192.33,459.67 231,425 245.67,449 164.33,521.67"/>
 		</g>
-		<g id="Layer_2">
-			<polygon class = "left" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" stroke-miterlimit="10" points="
-				66,140 66,628.288 64.07,632 66,630.387 66,632 67.393,629.223 222,500 181.933,466.99 118,528.294 118,237.981 263.724,350.735 263.724,290.311 	"/>
-			<polygon class = "middle" fill="#E91462" stroke="#E91462" stroke-width="4" stroke-linejoin="round" stroke-miterlimit="10" points="
-				195.081,358.595 195.062,422.976 296,501.121 424.117,358.258 423.883,293.878 293.121,438.355"/>
-			<polygon class = "right" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" stroke-miterlimit="10" points="464,187.314 464,587.63 
-				516,632 516,139 	"/>
+	</g>
+	<g id="XMLID_2_">
+		<g>
+			<polygon class = "middle-outline" fill="none" stroke="#ED156D" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" points="238.33,348.33 306,433.67 419.67,263 419.67,311 306,488.33 238.33,396"/>
 		</g>
-	</svg>
+	</g>
+	<g id="XMLID_3_">		
+		<g>
+			<polygon class = "right-outline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" points="435,190.33 465.67,151.67 
+				465.67,521.67 435,495"/>
+		</g>
+	</g>
+</g>
+</svg>
 	</center>
 </body>
 </html>
