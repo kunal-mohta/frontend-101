@@ -16,9 +16,52 @@ body,html{
 	width:100vw;
 }
 
+.title{
+	margin:10px 10px;
+	float:right;
+	height:150px;
+	width:150px;
+	font-size: 27px;
+	color:#f9f6f2;
+	background:#edc501;
+	border-radius: 5px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title-tile-number{
+	font-size:50px;
+	font-weight: bold;
+}
+
+.score{
+	margin:10px 10px;
+	position:;
+	height:100px;
+	width:150px;
+	background: #bbada0;
+	border-radius: 5px;	
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-size:30px;
+}
+
+.score-title{
+	color:#cdc1b4;
+	font-weight:bold;
+}
+
+.score-value{
+	color:#f9f6f2;
+	font-weight: bold;
+}
+
 .game-table{
 	position:relative;
-	top:30%;
+	top:10%;
 	left:5vw;
 	width:90vw;
 	height:90vw;
@@ -41,7 +84,8 @@ body,html{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	transition:transform 0.05s linear;
+	transition:transform 0.08s linear;
+	transform:scale(1);
 }
 
 .tile-number{
