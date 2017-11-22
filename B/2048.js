@@ -1,3 +1,5 @@
+window.onclick = function(){document.documentElement.webkitRequestFullscreen();}//onclick full screen
+
 var c1 = document.getElementsByClassName("1");
 var c2 = document.getElementsByClassName("2");
 var c3 = document.getElementsByClassName("3");
@@ -75,7 +77,15 @@ function combineX(a,b){//called when two tiles are combined, format -> combineX(
 	score += 2*currentTileNumber;
 
 	document.getElementsByClassName("score-value")[0].innerHTML = score;
-	combineCount++;
+	combineCount++;//should there be random tile
+
+	//determining win
+	if(2*currentTileNumber == 2048){
+		var x = confirm("You have Won! Want to continue?");
+		if(x == false){
+			restart();
+		}
+	}
 }
 
 function moveX(a,b){//called to move a tile from one cell to another, format -> moveX(cell1,cell2)
@@ -109,6 +119,14 @@ function combineY(a,b){//called when two tiles are combined, format -> combineX(
 
 	document.getElementsByClassName("score-value")[0].innerHTML = score;
 	combineCount++;
+
+	//determining win
+	if(2*currentTileNumber == 2048){
+		var x = confirm("You have Won! Want to continue?");
+		if(x == false){
+			restart();
+		}
+	}
 }
 
 function moveY(a,b){//called to move a tile from one cell to another, format -> moveX(cell1,cell2)

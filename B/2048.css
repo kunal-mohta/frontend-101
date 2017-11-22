@@ -2,11 +2,12 @@ body,html{
 	margin:0;
 	background: #faf8ef;
 	font-family: Arial;
-        overflow:hidden;
+    overflow:hidden;
 }
 
 body{
 	position:relative;
+	overflow: hidden;
 }
 
 .wrapper{
@@ -91,6 +92,9 @@ body{
 	align-items: center;
 	transition:transform 0.08s linear;
 	transform:scale(1);
+	background: red;
+	font-size: 27px;
+	color:#f9f6f2;
 }
 
 .tile-number{
