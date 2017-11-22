@@ -86,7 +86,7 @@ function moveX(a,b){//called to move a tile from one cell to another, format -> 
 function combineY(a,b){//called when two tiles are combined, format -> combineX(tile1,tile2)
 	var distBetween = b.getBoundingClientRect().top - a.getBoundingClientRect().top;
 	a.style.transform = 'translateY('+distBetween+'px)';
-	var currentTileNumber = a.classList[1].slice(4,5);
+	var currentTileNumber = a.classList[1].slice(4,a.classList[1].length);
 
 	setTimeout(function(){
 		a.remove();
