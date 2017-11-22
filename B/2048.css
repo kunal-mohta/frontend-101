@@ -2,6 +2,11 @@ body,html{
 	margin:0;
 	background: #faf8ef;
 	font-family: Arial;
+        overflow:hidden;
+}
+
+body{
+	position:relative;
 }
 
 .wrapper{
