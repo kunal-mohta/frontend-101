@@ -20,6 +20,7 @@ var transitionTime=80;
 var score = 0;
 var moveCount = 0, combineCount = 0;
 var emptyCount; 
+var isMoveOver = 1;
 
 function randomElement(){
 	var x = parseInt(Math.random()*100);
@@ -159,6 +160,7 @@ document.addEventListener("keydown", function(e){
 		case 39 : //right arrow
 			e.preventDefault();
 
+			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
 			if(c3[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(c4[i].childNodes.length == 0){//if fourth column empty
@@ -301,7 +303,10 @@ document.addEventListener("keydown", function(e){
 				}
 			}
 			}
+			}
 
+			isMoveOver = 0;
+			setTimeout(function(){isMoveOver = 1}, 100);
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
 				moveCount = 0;
@@ -437,6 +442,7 @@ document.addEventListener("keydown", function(e){
 
 		e.preventDefault();
 
+		if(isMoveOver == 1){
 		for(i=0;i<4;i++){
 			if(d2[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(d1[i].childNodes.length == 0){//if fourth column empty
@@ -578,7 +584,10 @@ document.addEventListener("keydown", function(e){
 					moveX(d4[i],d1[i]);
 				}
 			}
-			}
+		}
+		}	
+			isMoveOver = 0;
+			setTimeout(function(){isMoveOver = 1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -715,6 +724,7 @@ document.addEventListener("keydown", function(e){
 		case 38://upper arrow
 			e.preventDefault();
 
+			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
 			if(s2[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(s1[i].childNodes.length == 0){//if fourth column empty
@@ -857,6 +867,10 @@ document.addEventListener("keydown", function(e){
 				}
 			}
 			}
+			}
+
+			isMoveOver = 0;
+			setTimeout(function(){isMoveOver = 1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -992,6 +1006,7 @@ document.addEventListener("keydown", function(e){
 			case 40:
 				e.preventDefault();
 
+			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
 			if(r3[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(r4[i].childNodes.length == 0){//if fourth column empty
@@ -1134,6 +1149,10 @@ document.addEventListener("keydown", function(e){
 				}
 			}
 			}
+			}
+
+			isMoveOver = 0;
+			setTimeout(function(){isMoveOver = 1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -1282,6 +1301,7 @@ document.addEventListener("touchend", function(e){
 	if(deltaX > 0 && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
 		e.preventDefault();
 
+			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
 			if(c3[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(c4[i].childNodes.length == 0){//if fourth column empty
@@ -1424,6 +1444,11 @@ document.addEventListener("touchend", function(e){
 				}
 			}
 			}
+			}
+
+			isMoveOver = 0;
+
+			setTimeout(function(){isMoveOver=1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -1558,6 +1583,7 @@ document.addEventListener("touchend", function(e){
 	else if(deltaX < 0 && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
 		e.preventDefault();
 
+		if(isMoveOver == 1){
 		for(i=0;i<4;i++){
 			if(d2[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(d1[i].childNodes.length == 0){//if fourth column empty
@@ -1700,6 +1726,11 @@ document.addEventListener("touchend", function(e){
 				}
 			}
 			}
+			}
+
+			isMoveOver = 0;
+
+			setTimeout(function(){isMoveOver=1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -1833,6 +1864,9 @@ document.addEventListener("touchend", function(e){
 	}
 
 	else if(deltaY < 0 && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
+		e.preventDefault();
+
+		if(isMoveOver == 1){
 		for(i=0;i<4;i++){
 			if(s2[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(s1[i].childNodes.length == 0){//if fourth column empty
@@ -1975,6 +2009,11 @@ document.addEventListener("touchend", function(e){
 				}
 			}
 			}
+			}
+
+			isMoveOver = 0;
+
+			setTimeout(function(){isMoveOver=1}, 100);
 
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
@@ -2107,6 +2146,9 @@ document.addEventListener("touchend", function(e){
 	}
 
 	else if(deltaY > 0 && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
+		e.preventDefault();
+
+		if(isMoveOver == 1){
 		for(i=0;i<4;i++){
 			if(r3[i].childNodes.length != 0){//checks whether the third column is filled of empty
 				if(r4[i].childNodes.length == 0){//if fourth column empty
@@ -2249,7 +2291,12 @@ document.addEventListener("touchend", function(e){
 				}
 			}
 			}
+			}
 
+			isMoveOver = 0;
+
+			setTimeout(function(){isMoveOver=1}, 100);
+			
 			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
 				randomElement();
 				moveCount = 0;
