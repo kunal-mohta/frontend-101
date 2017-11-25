@@ -1290,6 +1290,8 @@ document.addEventListener("keydown", function(e){
 var x1,y1;
 document.addEventListener("touchstart", function(e){
 	if(!e) e = event.which;
+
+	e.preventDefault();
 	x1 = e.changedTouches[0].pageX;
 	y1 = e.changedTouches[0].pageY;
 });
