@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 B4</title>
+</head>
+<body>
+	<!-- <input type = "text" id = "invisibleInput" style = "opacity:0;"><br> -->
+
+	<script>
+		// window.onload = function(){
+		// 	invisibleInput.focus();
+		// }
+
+		// document.addEventListener("click", function(){
+		// 	invisibleInput.focus();
+		// });
+
+		// window.addEventListener("click", function(){
+		// 	invisibleInput.focus();
+		// });		
+		// invisibleInput.addEventListener("keyup", function(e){
+		// 	if(!e) e = window.event;
+		// 	console.log(e.key);
+
+		// 	var str = invisibleInput.value;
+		// 	var index = str.search("DVM");
+
+		// 	if(index >= 0){
+		// 		var text = document.createTextNode("Frontend development is fun");
+		// 		document.body.appendChild(text);
+		// 		var linebreak = document.createElement("br");
+		// 		document.body.appendChild(linebreak);
+
+		// 		invisibleInput.value = "";
+		// 	}
+		// });
+		var count = 0;
+
+		document.addEventListener("keyup", function(e){
+			if(!e) e = window.event;
+			switch(count){
+				case 0: 
+					if(e.key == "D") count = 1; 
+					break;
+
+				case 1:
+					if(e.key == "V") count = 2;
+					else if(e.key != "Shift" && e.key != "CapsLock") count = 0;
+					break;
+
+				case 2:
+					if(e.key == "M"){
+						count = 0;
+
+						var text = document.createTextNode("Frontend development is fun");
+						document.body.appendChild(text);
+						var linebreak = document.createElement("br");
+						document.body.appendChild(linebreak);
+					}
+					break;
+			}
+		});
+	</script>
+</body>
+</html>
