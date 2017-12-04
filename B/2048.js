@@ -153,12 +153,35 @@ function restart(){
 	emptyCount = 1;
 }
 
+
+
+var keyStack = [];
+var i = 0;
+setInterval(function(){
+	if(i>keyStack.length-1) return false;
+
+	else{
+		i++;
+	}
+}, 1000);
+
 document.addEventListener("keydown", function(e){
-	if(!e) e = event.which;
+	if(!e) e = window.event;
 	
-	switch(e.keyCode){
+	if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40){ 
+		keyStack[keyStack.length] = e.keyCode;
+	}
+});
+
+var k = 0;
+setInterval(function(){
+	if(k>keyStack.length-1) return false;
+
+	else{
+
+		switch(keyStack[k]){
 		case 39 : //right arrow
-			e.preventDefault();
+			
 
 			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
@@ -435,12 +458,10 @@ document.addEventListener("keydown", function(e){
 				}
 				
 			}, (transitionTime+20));
-			
+			k++;
 			break; 
 
 		case 37: //left arrow
-
-		e.preventDefault();
 
 		if(isMoveOver == 1){
 		for(i=0;i<4;i++){
@@ -717,12 +738,12 @@ document.addEventListener("keydown", function(e){
 				}
 				
 			}, (transitionTime+20));
-			
+			k++;
 			break; 
 
 
 		case 38://upper arrow
-			e.preventDefault();
+			
 
 			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
@@ -1000,11 +1021,11 @@ document.addEventListener("keydown", function(e){
 				}
 				
 			}, (transitionTime+20));
-			
+			k++;
 			break;
 
 			case 40:
-				e.preventDefault();
+				
 
 			if(isMoveOver == 1){
 			for(i=0;i<4;i++){
@@ -1282,10 +1303,12 @@ document.addEventListener("keydown", function(e){
 				}
 				
 			}, (transitionTime+20));
-			
+			k++;
 			break;
 	}
-});
+
+	}
+}, 100);
 
 var x1,y1;
 document.addEventListener("touchstart", function(e){
@@ -1666,6 +1689,7 @@ document.addEventListener("touchend", function(e){
 					else if(d4[i].childNodes.length != 0){
 						if(d4[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
 							combineX(d4[i].childNodes[0], d2[i].childNodes[0]);
+
 						}
 						else{
 							moveX(d4[i],d3[i]);
