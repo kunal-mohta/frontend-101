@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>frontend-101 B5</title>
+
+	<style>
+
+		body,html{
+			overflow-x: hidden;
+		}
+
+		body{
+			font-size:20px;
+		}
+
+		img{
+			height:300px;
+			width:300px;
+			opacity:0;
+		}
+		
+		@keyframes right-appear{
+			from{opacity:0;transform:translateX(100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-webkit-keyframes right-appear{
+			from{opacity:0;transform:translateX(100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-moz-keyframes right-appear{
+			from{opacity:0;transform:translateX(100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-o-keyframes right-appear{
+			from{opacity:0;transform:translateX(100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		
+		@keyframes left-appear{
+			from{opacity:0;transform:translateX(-100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-webkit-keyframes left-appear{
+			from{opacity:0;transform:translateX(-100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-moz-keyframes left-appear{
+			from{opacity:0;transform:translateX(-100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		@-o-keyframes left-appear{
+			from{opacity:0;transform:translateX(-100px);}
+			to{opacity:1;transform:translateX(0px);}
+		}
+		.right{
+			float:right;
+			/*animation:right-appear 0.2s ease-in;*/
+		}
+
+		.left{
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at libero id ex auctor finibus. Aliquam elit dui, laoreet nec ante bibendum, pellentesque rutrum ipsum. Aliquam ut scelerisque enim. Quisque malesuada accumsan tempor. Nulla at ultricies arcu, quis ultricies lectus. Sed quis leo et sapien molestie imperdiet. In id ipsum vehicula, tristique purus in, viverra est. Aenean ornare, elit in fermentum pretium, augue neque varius purus, cursus hendrerit tortor ligula commodo dui. Nulla finibus vehicula blandit. Donec ultrices justo sit amet nunc gravida lobortis. Integer sit amet maximus ipsum, eget bibendum ex. Suspendisse mattis dui sed dictum faucibus. Aliquam sapien justo, sollicitudin vitae justo sit amet, accumsan vulputate odio.
+	Duis et felis nunc. Mauris volutpat, ex sit amet vehicula vestibulum, risus dui facilisis dolor, ut lobortis nisl ante ut libero. Nunc auctor magna eget felis pharetra egestas. Aenean tristique gravida tortor, vel consectetur est lobortis non. Aliquam erat volutpat. Aliquam erat volutpat. Aliquam at vestibulum mi. Pellentesque accumsan pharetra orci, sit amet ullamcorper nibh egestas ut. Vestibulum id metus tincidunt, tincidunt eros sit amet, molestie purus. Mauris sodales scelerisque vehicula. Mauris at turpis ut turpis egestas pharetra. Donec sed enim id massa dignissim gravida. Donec ac consequat nisi, nec dictum turpis. Pellentesque aliquet dolor at tortor fringilla tempus. Nullam eu ligula et sem congue imperdiet.</p>
+	<img class = "right" src = "dvm.png">
+	<p>Sed eget risus nec lectus ultrices vestibulum. Nulla facilisi. Cras ac massa malesuada, pellentesque tellus cursus, scelerisque velit. Donec pretium tristique nisl, eu aliquam libero. Nulla nec facilisis lorem. Vivamus non tortor semper, efficitur sem ac, sagittis ligula. Quisque semper, justo sed pellentesque sagittis, libero dolor pellentesque dui, molestie elementum tellus urna eget dolor. Fusce faucibus lobortis enim in convallis. Vestibulum vitae nunc ex. Phasellus malesuada volutpat massa nec facilisis. Nam a sodales arcu, a rutrum elit. Vivamus nec velit libero. Nunc in purus vel est luctus vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tincidunt egestas justo, nec faucibus eros.</p>
+	
+	<p>
+	Ut porta sem sit amet lorem fermentum consequat. Praesent eleifend sodales mattis. Donec bibendum congue diam ut accumsan. Vivamus at rutrum tortor, quis ultrices enim. Aenean bibendum ante quis aliquam gravida. In porttitor sapien nec imperdiet mollis. Quisque sodales erat vel dolor finibus, et facilisis lectus viverra. Sed consequat eros ac elit vestibulum, a iaculis mauris faucibus. Pellentesque pulvinar quis est at maximus. Nulla mollis leo et dui auctor, vel cursus ex facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer quis porttitor nisl. Etiam dignissim, orci non eleifend scelerisque, lectus libero ornare ligula, sit amet consectetur nisi erat quis orci.
+	</p>
+	<img class = "left" src = "dvm.png">
+	<p>
+	Nunc lobortis, orci id efficitur tempor, nulla augue dignissim metus, ac bibendum elit justo et velit. Ut et dapibus tortor, a placerat urna. Suspendisse at nunc finibus, porttitor lorem nec, tincidunt tortor. Suspendisse finibus sagittis mi, nec ultricies velit tincidunt sollicitudin. Quisque pharetra felis a orci pharetra tempor id id augue. Proin nec mi pellentesque, posuere velit et, viverra odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique elit non lectus efficitur efficitur. Vestibulum gravida mollis ante, accumsan bibendum purus imperdiet eget. Integer laoreet consectetur magna, in mollis erat viverra vel. Nunc eu semper turpis. Etiam in massa non metus cursus dignissim sed nec felis.
+	</p>
+	<p>Sed eget risus nec lectus ultrices vestibulum. Nulla facilisi. Cras ac massa malesuada, pellentesque tellus cursus, scelerisque velit. Donec pretium tristique nisl, eu aliquam libero. Nulla nec facilisis lorem. Vivamus non tortor semper, efficitur sem ac, sagittis ligula. Quisque semper, justo sed pellentesque sagittis, libero dolor pellentesque dui, molestie elementum tellus urna eget dolor. Fusce faucibus lobortis enim in convallis. Vestibulum vitae nunc ex. Phasellus malesuada volutpat massa nec facilisis. Nam a sodales arcu, a rutrum elit. Vivamus nec velit libero. Nunc in purus vel est luctus vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tincidunt egestas justo, nec faucibus eros.</p>
+
+	<p>
+	Ut porta sem sit amet lorem fermentum consequat. Praesent eleifend sodales mattis. Donec bibendum congue diam ut accumsan. Vivamus at rutrum tortor, quis ultrices enim. Aenean bibendum ante quis aliquam gravida. In porttitor sapien nec imperdiet mollis. Quisque sodales erat vel dolor finibus, et facilisis lectus viverra. Sed consequat eros ac elit vestibulum, a iaculis mauris faucibus. Pellentesque pulvinar quis est at maximus. Nulla mollis leo et dui auctor, vel cursus ex facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer quis porttitor nisl. Etiam dignissim, orci non eleifend scelerisque, lectus libero ornare ligula, sit amet consectetur nisi erat quis orci.
+	</p>
+	<img class = "right" src = "dvm.png">
+	<img class = "left" src = "dvm.png">
+	<p>
+	Nunc lobortis, orci id efficitur tempor, nulla augue dignissim metus, ac bibendum elit justo et velit. Ut et dapibus tortor, a placerat urna. Suspendisse at nunc finibus, porttitor lorem nec, tincidunt tortor. Suspendisse finibus sagittis mi, nec ultricies velit tincidunt sollicitudin. Quisque pharetra felis a orci pharetra tempor id id augue. Proin nec mi pellentesque, posuere velit et, viverra odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique elit non lectus efficitur efficitur. Vestibulum gravida mollis ante, accumsan bibendum purus imperdiet eget. Integer laoreet consectetur magna, in mollis erat viverra vel. Nunc eu semper turpis. Etiam in massa non metus cursus dignissim sed nec felis.
+	</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at libero id ex auctor finibus. Aliquam elit dui, laoreet nec ante bibendum, pellentesque rutrum ipsum. Aliquam ut scelerisque enim. Quisque malesuada accumsan tempor. Nulla at ultricies arcu, quis ultricies lectus. Sed quis leo et sapien molestie imperdiet. In id ipsum vehicula, tristique purus in, viverra est. Aenean ornare, elit in fermentum pretium, augue neque varius purus, cursus hendrerit tortor ligula commodo dui. Nulla finibus vehicula blandit. Donec ultrices justo sit amet nunc gravida lobortis. Integer sit amet maximus ipsum, eget bibendum ex. Suspendisse mattis dui sed dictum faucibus. Aliquam sapien justo, sollicitudin vitae justo sit amet, accumsan vulputate odio.
+	Duis et felis nunc. Mauris volutpat, ex sit amet vehicula vestibulum, risus dui facilisis dolor, ut lobortis nisl ante ut libero. Nunc auctor magna eget felis pharetra egestas. Aenean tristique gravida tortor, vel consectetur est lobortis non. Aliquam erat volutpat. Aliquam erat volutpat. Aliquam at vestibulum mi. Pellentesque accumsan pharetra orci, sit amet ullamcorper nibh egestas ut. Vestibulum id metus tincidunt, tincidunt eros sit amet, molestie purus. Mauris sodales scelerisque vehicula. Mauris at turpis ut turpis egestas pharetra. Donec sed enim id massa dignissim gravida. Donec ac consequat nisi, nec dictum turpis. Pellentesque aliquet dolor at tortor fringilla tempus. Nullam eu ligula et sem congue imperdiet.</p>
+	<img class = "right" src = "dvm.png">
+	<p>Sed eget risus nec lectus ultrices vestibulum. Nulla facilisi. Cras ac massa malesuada, pellentesque tellus cursus, scelerisque velit. Donec pretium tristique nisl, eu aliquam libero. Nulla nec facilisis lorem. Vivamus non tortor semper, efficitur sem ac, sagittis ligula. Quisque semper, justo sed pellentesque sagittis, libero dolor pellentesque dui, molestie elementum tellus urna eget dolor. Fusce faucibus lobortis enim in convallis. Vestibulum vitae nunc ex. Phasellus malesuada volutpat massa nec facilisis. Nam a sodales arcu, a rutrum elit. Vivamus nec velit libero. Nunc in purus vel est luctus vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tincidunt egestas justo, nec faucibus eros.</p>
+	
+	<p>
+	Ut porta sem sit amet lorem fermentum consequat. Praesent eleifend sodales mattis. Donec bibendum congue diam ut accumsan. Vivamus at rutrum tortor, quis ultrices enim. Aenean bibendum ante quis aliquam gravida. In porttitor sapien nec imperdiet mollis. Quisque sodales erat vel dolor finibus, et facilisis lectus viverra. Sed consequat eros ac elit vestibulum, a iaculis mauris faucibus. Pellentesque pulvinar quis est at maximus. Nulla mollis leo et dui auctor, vel cursus ex facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer quis porttitor nisl. Etiam dignissim, orci non eleifend scelerisque, lectus libero ornare ligula, sit amet consectetur nisi erat quis orci.
+	</p>
+	<img class = "left" src = "dvm.png">
+	<p>
+	Nunc lobortis, orci id efficitur tempor, nulla augue dignissim metus, ac bibendum elit justo et velit. Ut et dapibus tortor, a placerat urna. Suspendisse at nunc finibus, porttitor lorem nec, tincidunt tortor. Suspendisse finibus sagittis mi, nec ultricies velit tincidunt sollicitudin. Quisque pharetra felis a orci pharetra tempor id id augue. Proin nec mi pellentesque, posuere velit et, viverra odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique elit non lectus efficitur efficitur. Vestibulum gravida mollis ante, accumsan bibendum purus imperdiet eget. Integer laoreet consectetur magna, in mollis erat viverra vel. Nunc eu semper turpis. Etiam in massa non metus cursus dignissim sed nec felis.
+	</p>
+	<p>Sed eget risus nec lectus ultrices vestibulum. Nulla facilisi. Cras ac massa malesuada, pellentesque tellus cursus, scelerisque velit. Donec pretium tristique nisl, eu aliquam libero. Nulla nec facilisis lorem. Vivamus non tortor semper, efficitur sem ac, sagittis ligula. Quisque semper, justo sed pellentesque sagittis, libero dolor pellentesque dui, molestie elementum tellus urna eget dolor. Fusce faucibus lobortis enim in convallis. Vestibulum vitae nunc ex. Phasellus malesuada volutpat massa nec facilisis. Nam a sodales arcu, a rutrum elit. Vivamus nec velit libero. Nunc in purus vel est luctus vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tincidunt egestas justo, nec faucibus eros.</p>
+
+	<p>
+	Ut porta sem sit amet lorem fermentum consequat. Praesent eleifend sodales mattis. Donec bibendum congue diam ut accumsan. Vivamus at rutrum tortor, quis ultrices enim. Aenean bibendum ante quis aliquam gravida. In porttitor sapien nec imperdiet mollis. Quisque sodales erat vel dolor finibus, et facilisis lectus viverra. Sed consequat eros ac elit vestibulum, a iaculis mauris faucibus. Pellentesque pulvinar quis est at maximus. Nulla mollis leo et dui auctor, vel cursus ex facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer quis porttitor nisl. Etiam dignissim, orci non eleifend scelerisque, lectus libero ornare ligula, sit amet consectetur nisi erat quis orci.
+	</p>
+	<img class = "right" src = "dvm.png">
+	<img class = "left" src = "dvm.png">
+	<p>
+	Nunc lobortis, orci id efficitur tempor, nulla augue dignissim metus, ac bibendum elit justo et velit. Ut et dapibus tortor, a placerat urna. Suspendisse at nunc finibus, porttitor lorem nec, tincidunt tortor. Suspendisse finibus sagittis mi, nec ultricies velit tincidunt sollicitudin. Quisque pharetra felis a orci pharetra tempor id id augue. Proin nec mi pellentesque, posuere velit et, viverra odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique elit non lectus efficitur efficitur. Vestibulum gravida mollis ante, accumsan bibendum purus imperdiet eget. Integer laoreet consectetur magna, in mollis erat viverra vel. Nunc eu semper turpis. Etiam in massa non metus cursus dignissim sed nec felis.
+	</p>
+	<script>
+		window.onload = function(){
+			for(i=0;i<document.getElementsByClassName("right").length;i++){
+				if(document.getElementsByClassName("right")[i].getBoundingClientRect().top <= window.innerHeight && document.getElementsByClassName("right")[i].getBoundingClientRect().top > (-document.getElementsByClassName("right")[i].getBoundingClientRect().height)){
+					document.getElementsByClassName("right")[i].style.animation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.webkitAnimation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.mozAnimation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.oAnimation = "right-appear 0.5s ease-out forwards";
+				}
+			}
+
+			for(i=0;i<document.getElementsByClassName("left").length;i++){
+				if(document.getElementsByClassName("left")[i].getBoundingClientRect().top <= window.innerHeight && document.getElementsByClassName("left")[i].getBoundingClientRect().top > (-document.getElementsByClassName("left")[i].getBoundingClientRect().height)){
+					document.getElementsByClassName("left")[i].style.animation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.webkitAnimation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.mozAnimation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.oAnimation = "left-appear 0.5s ease-out forwards";
+				}
+			}
+		}
+
+		document.addEventListener("scroll", function(){
+			for(i=0;i<document.getElementsByClassName("right").length;i++){
+				if(document.getElementsByClassName("right")[i].getBoundingClientRect().top <= window.innerHeight && document.getElementsByClassName("right")[i].getBoundingClientRect().top > (-document.getElementsByClassName("right")[i].getBoundingClientRect().height)){
+					document.getElementsByClassName("right")[i].style.animation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.webkitAnimation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.mozAnimation = "right-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("right")[i].style.oAnimation = "right-appear 0.5s ease-out forwards";
+				}
+			}
+
+			for(i=0;i<document.getElementsByClassName("left").length;i++){
+				if(document.getElementsByClassName("left")[i].getBoundingClientRect().top <= window.innerHeight && document.getElementsByClassName("left")[i].getBoundingClientRect().top > (-document.getElementsByClassName("left")[i].getBoundingClientRect().height)){
+					document.getElementsByClassName("left")[i].style.animation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.webkitAnimation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.mozAnimation = "left-appear 0.5s ease-out forwards";
+					document.getElementsByClassName("left")[i].style.oAnimation = "left-appear 0.5s ease-out forwards";
+				}
+			}
+		});
+	</script>
+</body>
+</html>
