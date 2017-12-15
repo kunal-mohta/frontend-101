@@ -1,0 +1,25 @@
+{
+	"manifest_version":2,
+	"name":"DVM 2017 Frontend - Kunal Mohta",
+	"description":"2017 winter assignment for Frontend team",
+	"version":"1.0",
+
+	"browser_action":{
+		"default_title":"Google extension - Kunal Mohta",
+		"default_icon":"dvm.png",
+		"default_popup":"popup.html"
+	},
+
+	"permissions":["activeTab","tabs"],
+
+	"background":{
+		"page":"popup.html"
+	},
+
+	"content_scripts":[
+		{
+			"matches":["https://bits-bosm.org/","https://bits-oasis.org/","https://bits-apogee.org/2017/"],
+			"js":["content.js"]
+		}
+	]
+}
