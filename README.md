@@ -21,5 +21,5 @@ DVM - Frontend assignment for better understanding and practice of CSS and JAVAS
   - [Task #B5 - Image Slide In](https://kunal-mohta.github.io/frontend-101/B/5.html)
   - [Task #B6 - FrontEnd Tech](https://kunal-mohta.github.io/frontend-101/B/6.html)
   - [Task #B7 - Around The World](https://kunal-mohta.github.io/frontend-101/B/7.html)
-  - [Task #B8 - Game Time (2048)](https://kunal-mohta.github.io/frontend-101/B/8.html)
+  - [Task #B8 - Game Time (2048)](https://kunal-mohta.github.io/frontend-101/B/2048.html)
   - [Task #B9 - Basic Chrome Extension](https://kunal-mohta.github.io/frontend-101/B/9.html)
