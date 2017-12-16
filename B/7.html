@@ -9,65 +9,141 @@
 			margin:0;
 			height:100%;
 		}
-	
+		
+		::-webkit-scrollbar{
+			display: none;
+		}
+		::-moz-scrollbar{
+			display: none;
+		}
+
 		.map-container{
-			height:1000px;
-			width:1600px;
+			position:absolute; 
+			top:0%;
+			left:0%;
+			height:calc((120/1.6)*1vw);
+			width:120vw;
 			background: url('world.jpg') no-repeat;
-			background-size: contain;
+			background-size: cover;
 		}
 	</style>
 </head>
 <body>
-	<div class = "map-container">
-	</div>
+
+		<div class = "map-container"></div>
 
 	<script>
 		window.onbeforeunload = function(){window.scrollTo(0,0);}
-		document.addEventListener("wheel", function(e){
-			if(!e) e = window.event;
-			e.preventDefault();
+		var map = document.getElementsByClassName("map-container")[0];
+		
+		var checkLeft = 0;
+		var checkRight = 0;
+		var checkTop = 0;
+		var checkBot = 0;
 
-			var map = document.getElementsByClassName("map-container")[0];
+		setInterval(function(){
 			var mapHeight = map.getBoundingClientRect().height;
 			var mapWidth = map.getBoundingClientRect().width;
-			var aspectRatio = (mapWidth/mapHeight);
+			var mapTop = map.getBoundingClientRect().top;
+			var mapLeft = map.getBoundingClientRect().left;
 
-			if(mapHeight > window.innerHeight && mapWidth > window.innerWidth){
-				map.style.height = (mapHeight-e.deltaY)+"px";
-				map.style.width = (mapWidth-(e.deltaY)*aspectRatio)+"px";
+			if(mapLeft < -10){
+				checkLeft = 1;
+			}
+			else{
+				checkLeft = 0;
 			}
 
-			else if(mapHeight < window.innerHeight || mapWidth < window.innerWidth){
-				if(e.deltaY < 0){
-					map.style.height = (mapHeight-e.deltaY)+"px";
-					map.style.width = (mapWidth-(e.deltaY)*aspectRatio)+"px";
-				}
+			if(mapLeft > -(mapWidth - window.innerWidth)){
+				checkRight = 1;
+			}
+			else{
+				checkRight = 0;
 			}
 
-			//console.log();
-			window.scrollBy((-(e.deltaY)*aspectRatio)*((e.clientX+window.scrollX)/mapWidth),-e.deltaY*((e.clientY+window.scrollY)/mapHeight));
-		});
+			if(mapTop > -(mapHeight - window.innerHeight)){
+				checkBot = 1;
+			}
+			else{
+				checkBot = 0;
+			}
 
-		var isMouseDown = 0;
+			if(mapTop < -10){
+				checkTop = 1;
+			}
+			else{
+				checkTop = 0;
+			}
 
-		document.addEventListener("mousedown", function(){
-			isMouseDown = 1;
-			document.body.style.cursor = "pointer";
-		});
 
-		document.addEventListener("mouseup", function(){
-			isMouseDown = 0;
-			document.body.style.cursor = "default";
-		});
+		}, 1);
 
-		document.addEventListener("mousemove", function(e){
+		document.addEventListener("wheel", function(e){
 			if(!e) e = window.event;
 			
-			if(isMouseDown == 1){
-				window.scrollBy(-e.movementX,-e.movementY);
+			e.preventDefault();
+
+			var mapHeight = map.getBoundingClientRect().height;
+			var mapWidth = map.getBoundingClientRect().width;
+			var mapTop = map.getBoundingClientRect().top;
+			var mapLeft = map.getBoundingClientRect().left;			
+				
+			if(e.deltaY < 0) {
+				map.style.transform = "scale("+1.05+")";
+				map.style.transformOrigin = ((-mapLeft+e.clientX)/mapWidth)*100+"% "+((-mapTop+e.clientY)/mapHeight)*100+"%";
+				map.style.top = map.getBoundingClientRect().top+"px";
+				map.style.left = map.getBoundingClientRect().left+"px";
+				map.style.height = map.getBoundingClientRect().height+"px";
+				map.style.width = map.getBoundingClientRect().width+"px";
+			}
+			else if(e.deltaY > 0 && checkLeft == 1 && checkTop == 1 && checkRight == 1 && checkBot == 1 ) {
+				map.style.transform = "scale("+0.95+")";
+				map.style.transformOrigin = ((-mapLeft+e.clientX)/mapWidth)*100+"% "+((-mapTop+e.clientY)/mapHeight)*100+"%";	
+				map.style.top = map.getBoundingClientRect().top+"px";
+				map.style.left = map.getBoundingClientRect().left+"px";
+				map.style.height = map.getBoundingClientRect().height+"px";
+				map.style.width = map.getBoundingClientRect().width+"px";
 			}
 		});
+
+			var isMouseDown = 0;
+
+			document.addEventListener("mousedown", function(){
+				isMouseDown = 1;
+				document.body.style.cursor = "pointer";
+			});
+
+			document.addEventListener("mouseup", function(){
+				isMouseDown = 0;
+				document.body.style.cursor = "default";
+			});
+
+			document.addEventListener("mousemove", function(e){
+				if(!e) e = window.event;
+
+				if(isMouseDown == 1){
+						var map = document.getElementsByClassName("map-container")[0];
+						console.log(e.movementY);
+
+						if(checkLeft == 1 && e.movementX >= 0){
+							map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + e.movementX)+"px";
+						}
+
+						if(checkRight == 1 && e.movementX <= 0){
+							map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + e.movementX)+"px";
+						}
+
+						if(checkTop == 1 && e.movementY >= 0){
+							map.style.top = (parseFloat(window.getComputedStyle(map).getPropertyValue("top")) + e.movementY)+"px";
+						}
+
+						if(checkBot == 1 && e.movementY <= 0){
+							map.style.top = (parseFloat(window.getComputedStyle(map).getPropertyValue("top")) + e.movementY)+"px";
+						}						
+				}
+			});
+
+		
 	</script>
 </body>
 </html>
