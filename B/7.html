@@ -3,7 +3,7 @@
 <head>
 	<title>frontend-101 B7</title>
 
-	<meta name = "viewport" content = "width=device-width,initial-scale=1">
+	<meta name = "viewport" content = "width=device-width,initial-scale=1,user-scalable=no">
 	<style>
 		body,html{
 			margin:0;
@@ -25,6 +25,15 @@
 			width:120vw;
 			background: url('world.jpg') no-repeat;
 			background-size: cover;
+		}
+
+		@media all and (max-width:600px){
+			.map-container{
+				height:120vh;
+				width:calc((120*1.6)*1vh);
+				background: url('world.jpg') no-repeat;
+				background-size: cover;
+			}
 		}
 	</style>
 </head>
@@ -123,7 +132,6 @@
 
 				if(isMouseDown == 1){
 						var map = document.getElementsByClassName("map-container")[0];
-						console.log(e.movementY);
 
 						if(checkLeft == 1 && e.movementX >= 0){
 							map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + e.movementX)+"px";
@@ -143,7 +151,111 @@
 				}
 			});
 
+		//mobile starts here
+
 		
+		var itouch1, itouch2;
+		var ipanX, ipanY;
+
+		document.addEventListener("touchstart", function(e){
+			if(!e) e = window.event;
+			
+			if(e.touches.length == 2){
+				itouch1 = {
+					x : e.touches[0].clientX,
+					y : e.touches[0].clientY
+				}
+
+				itouch2 = {
+					x : e.touches[1].clientX,
+					y : e.touches[1].clientY
+				}
+			}
+
+			else if(e.touches.length == 1){
+				ipanX = e.touches[0].pageX;
+				ipanY = e.touches[0].pageY;
+			}
+		});
+
+		document.addEventListener("touchmove", function(e){
+			if(!e) e = window.event;
+
+
+			if(e.touches.length == 2){
+				var ftouch1 = {
+					x : e.touches[0].clientX,
+					y : e.touches[0].clientY
+				}
+
+				var ftouch2 = {
+					x : e.touches[1].clientX,
+					y : e.touches[1].clientY
+				}
+
+				var idiffX = Math.abs(itouch1.x - itouch2.x);
+				var idiffY = Math.abs(itouch1.y - itouch2.y);
+
+				var fdiffX = Math.abs(ftouch1.x - ftouch2.x);
+				var fdiffY = Math.abs(ftouch1.x - ftouch2.x);
+
+				var idist = ((idiffX)**2 + (idiffY)**2)**0.5;
+				var fdist = ((fdiffX)**2 + (fdiffY)**2)**0.5;
+
+				var map = document.getElementsByClassName("map-container")[0];
+
+				var mapHeight = map.getBoundingClientRect().height;
+				var mapWidth = map.getBoundingClientRect().width;
+				var mapTop = map.getBoundingClientRect().top;
+				var mapLeft = map.getBoundingClientRect().left;			
+					
+				var imidX = (itouch1.X + itouch2.X)/2;
+				var imidY = (itouch1.Y + itouch2.Y)/2;
+
+				if(fdist > idist) {
+					map.style.transform = "scale("+1.05+")";
+					map.style.transformOrigin = ((-mapLeft+imidX)/mapWidth)*100+"% "+((-mapTop+imidY)/mapHeight)*100+"%";
+					map.style.top = map.getBoundingClientRect().top+"px";
+					map.style.left = map.getBoundingClientRect().left+"px";
+					map.style.height = map.getBoundingClientRect().height+"px";
+					map.style.width = map.getBoundingClientRect().width+"px";
+				}
+				else if(fdist < idist && checkLeft == 1 && checkTop == 1 && checkRight == 1 && checkBot == 1 ) {
+					map.style.transform = "scale("+0.95+")";
+					map.style.transformOrigin = ((-mapLeft+imidX)/mapWidth)*100+"% "+((-mapTop+imidY)/mapHeight)*100+"%";	
+					map.style.top = map.getBoundingClientRect().top+"px";
+					map.style.left = map.getBoundingClientRect().left+"px";
+					map.style.height = map.getBoundingClientRect().height+"px";
+					map.style.width = map.getBoundingClientRect().width+"px";
+				}
+			}
+
+			else if(e.touches.length == 1){
+				var fpanX = e.touches[0].pageX;
+				var fpanY = e.touches[0].pageY;
+
+				var moveX = fpanX - ipanX;
+				var moveY = fpanY - ipanY;
+
+				var map = document.getElementsByClassName("map-container")[0];
+
+				if(checkLeft == 1 && moveX >= 0){
+					map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + moveX)+"px";
+				}
+
+				if(checkRight == 1 && moveX <= 0){
+					map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + moveX)+"px";
+				}
+
+				if(checkTop == 1 && moveY >= 0){
+					map.style.top = (parseFloat(window.getComputedStyle(map).getPropertyValue("top")) + moveY)+"px";
+				}
+
+				if(checkBot == 1 && moveY <= 0){
+					map.style.top = (parseFloat(window.getComputedStyle(map).getPropertyValue("top")) + moveY)+"px";
+				}
+			}
+		});
 	</script>
 </body>
 </html>
