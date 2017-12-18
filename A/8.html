@@ -252,18 +252,17 @@
 	</center>
 
 	<script>
-
-
-	for(i=0,j=0.1,k=0.4;i<document.getElementsByClassName("p").length;i++,j+=0.04,k+=0.05){
-		document.getElementsByClassName("p")[i].style.transition = "background "+k+"s, clip-path "+k+"s";
-		document.getElementsByClassName("p")[i].style.transitionDelay = j+"s,"+j+"s";
-		document.getElementsByClassName("p")[i].style.transitionTimingFunction = "cubic-bezier(0.71, 0.04, 0.1, 0.93)";
-	}
 		var count = 1;
 		document.addEventListener("keydown", function(e){
 			if(!e) e = window.event;
 
 			if(e.keyCode == 39){//right arrow
+				for(i=0,j=0.1,k=0.4;i<document.getElementsByClassName("p").length;i++,j+=0.04,k+=0.05){
+					document.getElementsByClassName("p")[i].style.transition = "background "+k+"s, clip-path "+k+"s";
+					document.getElementsByClassName("p")[i].style.transitionDelay = j+"s,"+j+"s";
+					document.getElementsByClassName("p")[i].style.transitionTimingFunction = "cubic-bezier(0.71, 0.04, 0.1, 0.93)";
+				}
+
 				if(count != 3){
 					count++;
 				}
@@ -272,6 +271,12 @@
 				}
 			}
 			else if(e.keyCode == 37){//left arrow
+				for(i=(document.getElementsByClassName("p").length-1),j=0.1,k=0.4;i>=0;i--,j+=0.04,k+=0.05){
+					document.getElementsByClassName("p")[i].style.transition = "background "+k+"s, clip-path "+k+"s";
+					document.getElementsByClassName("p")[i].style.transitionDelay = j+"s,"+j+"s";
+					document.getElementsByClassName("p")[i].style.transitionTimingFunction = "cubic-bezier(0.71, 0.04, 0.1, 0.93)";
+				}
+
 				if(count != 1){
 					count--;
 				}
