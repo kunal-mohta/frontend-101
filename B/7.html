@@ -8,6 +8,7 @@
 		body,html{
 			margin:0;
 			height:100%;
+			overflow:hidden;
 		}
 		
 		::-webkit-scrollbar{
@@ -162,13 +163,13 @@
 			
 			if(e.touches.length == 2){
 				itouch1 = {
-					x : e.touches[0].clientX,
-					y : e.touches[0].clientY
+					x : e.touches[0].pageX,
+					y : e.touches[0].pageY
 				}
 
 				itouch2 = {
-					x : e.touches[1].clientX,
-					y : e.touches[1].clientY
+					x : e.touches[1].pageX,
+					y : e.touches[1].pageY
 				}
 			}
 
@@ -184,13 +185,13 @@
 
 			if(e.touches.length == 2){
 				var ftouch1 = {
-					x : e.touches[0].clientX,
-					y : e.touches[0].clientY
+					x : e.touches[0].pageX,
+					y : e.touches[0].pageY
 				}
 
 				var ftouch2 = {
-					x : e.touches[1].clientX,
-					y : e.touches[1].clientY
+					x : e.touches[1].pageX,
+					y : e.touches[1].pageY
 				}
 
 				var idiffX = Math.abs(itouch1.x - itouch2.x);
@@ -202,6 +203,8 @@
 				var idist = ((idiffX)**2 + (idiffY)**2)**0.5;
 				var fdist = ((fdiffX)**2 + (fdiffY)**2)**0.5;
 
+				var relChange = (Math.abs((fdist - idist)/idist))/5;
+
 				var map = document.getElementsByClassName("map-container")[0];
 
 				var mapHeight = map.getBoundingClientRect().height;
@@ -209,20 +212,20 @@
 				var mapTop = map.getBoundingClientRect().top;
 				var mapLeft = map.getBoundingClientRect().left;			
 					
-				var imidX = (itouch1.X + itouch2.X)/2;
-				var imidY = (itouch1.Y + itouch2.Y)/2;
+				var fmidX = (ftouch1.x + ftouch2.x)/2;
+				var fmidY = (ftouch1.y + ftouch2.y)/2;
 
 				if(fdist > idist) {
-					map.style.transform = "scale("+1.05+")";
-					map.style.transformOrigin = ((-mapLeft+imidX)/mapWidth)*100+"% "+((-mapTop+imidY)/mapHeight)*100+"%";
+					map.style.transform = "scale("+(1+relChange)+")";
+					map.style.transformOrigin = ((-mapLeft+fmidX)/mapWidth)*100+"% "+((-mapTop+fmidY)/mapHeight)*100+"%";
 					map.style.top = map.getBoundingClientRect().top+"px";
 					map.style.left = map.getBoundingClientRect().left+"px";
 					map.style.height = map.getBoundingClientRect().height+"px";
 					map.style.width = map.getBoundingClientRect().width+"px";
 				}
 				else if(fdist < idist && checkLeft == 1 && checkTop == 1 && checkRight == 1 && checkBot == 1 ) {
-					map.style.transform = "scale("+0.95+")";
-					map.style.transformOrigin = ((-mapLeft+imidX)/mapWidth)*100+"% "+((-mapTop+imidY)/mapHeight)*100+"%";	
+					map.style.transform = "scale("+(1-relChange)+")";
+					map.style.transformOrigin = ((-mapLeft+fmidX)/mapWidth)*100+"% "+((-mapTop+fmidY)/mapHeight)*100+"%";	
 					map.style.top = map.getBoundingClientRect().top+"px";
 					map.style.left = map.getBoundingClientRect().left+"px";
 					map.style.height = map.getBoundingClientRect().height+"px";
@@ -234,8 +237,8 @@
 				var fpanX = e.touches[0].pageX;
 				var fpanY = e.touches[0].pageY;
 
-				var moveX = fpanX - ipanX;
-				var moveY = fpanY - ipanY;
+				var moveX = (fpanX - ipanX)/10;
+				var moveY = (fpanY - ipanY)/10;
 
 				var map = document.getElementsByClassName("map-container")[0];
 
