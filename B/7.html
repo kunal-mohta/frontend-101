@@ -51,7 +51,48 @@
 		var checkTop = 0;
 		var checkBot = 0;
 
-		setInterval(function(){
+		// setInterval(function(){
+		// 	var mapHeight = map.getBoundingClientRect().height;
+		// 	var mapWidth = map.getBoundingClientRect().width;
+		// 	var mapTop = map.getBoundingClientRect().top;
+		// 	var mapLeft = map.getBoundingClientRect().left;
+
+		// 	if(mapLeft < -10){
+		// 		checkLeft = 1;
+		// 	}
+		// 	else{
+		// 		checkLeft = 0;
+		// 	}
+
+		// 	if(mapLeft > -(mapWidth - window.innerWidth)){
+		// 		checkRight = 1;
+		// 	}
+		// 	else{
+		// 		checkRight = 0;
+		// 	}
+
+		// 	if(mapTop > -(mapHeight - window.innerHeight)){
+		// 		checkBot = 1;
+		// 	}
+		// 	else{
+		// 		checkBot = 0;
+		// 	}
+
+		// 	if(mapTop < -10){
+		// 		checkTop = 1;
+		// 	}
+		// 	else{
+		// 		checkTop = 0;
+		// 	}
+
+
+		// }, 1);
+
+		document.addEventListener("wheel", function(e){
+			if(!e) e = window.event;
+			
+			e.preventDefault();
+
 			var mapHeight = map.getBoundingClientRect().height;
 			var mapWidth = map.getBoundingClientRect().width;
 			var mapTop = map.getBoundingClientRect().top;
@@ -85,18 +126,6 @@
 				checkTop = 0;
 			}
 
-
-		}, 1);
-
-		document.addEventListener("wheel", function(e){
-			if(!e) e = window.event;
-			
-			e.preventDefault();
-
-			var mapHeight = map.getBoundingClientRect().height;
-			var mapWidth = map.getBoundingClientRect().width;
-			var mapTop = map.getBoundingClientRect().top;
-			var mapLeft = map.getBoundingClientRect().left;			
 				
 			if(e.deltaY < 0) {
 				map.style.transform = "scale("+1.05+")";
@@ -131,8 +160,44 @@
 			document.addEventListener("mousemove", function(e){
 				if(!e) e = window.event;
 
+
 				if(isMouseDown == 1){
 						var map = document.getElementsByClassName("map-container")[0];
+
+
+						var mapHeight = map.getBoundingClientRect().height;
+						var mapWidth = map.getBoundingClientRect().width;
+						var mapTop = map.getBoundingClientRect().top;
+						var mapLeft = map.getBoundingClientRect().left;
+
+						if(mapLeft < -10){
+							checkLeft = 1;
+						}
+						else{
+							checkLeft = 0;
+						}
+
+						if(mapLeft > -(mapWidth - window.innerWidth)){
+							checkRight = 1;
+						}
+						else{
+							checkRight = 0;
+						}
+
+						if(mapTop > -(mapHeight - window.innerHeight)){
+							checkBot = 1;
+						}
+						else{
+							checkBot = 0;
+						}
+
+						if(mapTop < -10){
+							checkTop = 1;
+						}
+						else{
+							checkTop = 0;
+						}
+
 
 						if(checkLeft == 1 && e.movementX >= 0){
 							map.style.left = (parseFloat(window.getComputedStyle(map).getPropertyValue("left")) + e.movementX)+"px";
@@ -181,6 +246,41 @@
 
 		document.addEventListener("touchmove", function(e){
 			if(!e) e = window.event;
+
+
+			var map = document.getElementsByClassName("map-container")[0];
+			var mapHeight = map.getBoundingClientRect().height;
+			var mapWidth = map.getBoundingClientRect().width;
+			var mapTop = map.getBoundingClientRect().top;
+			var mapLeft = map.getBoundingClientRect().left;
+
+			if(mapLeft < -10){
+				checkLeft = 1;
+			}
+			else{
+				checkLeft = 0;
+			}
+
+			if(mapLeft > -(mapWidth - window.innerWidth)){
+				checkRight = 1;
+			}
+			else{
+				checkRight = 0;
+			}
+
+			if(mapTop > -(mapHeight - window.innerHeight)){
+				checkBot = 1;
+			}
+			else{
+				checkBot = 0;
+			}
+
+			if(mapTop < -10){
+				checkTop = 1;
+			}
+			else{
+				checkTop = 0;
+			}
 
 
 			if(e.touches.length == 2){
@@ -237,8 +337,12 @@
 				var fpanX = e.touches[0].pageX;
 				var fpanY = e.touches[0].pageY;
 
-				var moveX = (fpanX - ipanX)/10;
-				var moveY = (fpanY - ipanY)/10;
+				var moveX = (fpanX - ipanX);
+				var moveY = (fpanY - ipanY);
+
+				ipanX = fpanX;
+				ipanY = fpanY;
+				console.log(moveX);
 
 				var map = document.getElementsByClassName("map-container")[0];
 
