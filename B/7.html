@@ -134,6 +134,7 @@
 				map.style.left = map.getBoundingClientRect().left+"px";
 				map.style.height = map.getBoundingClientRect().height+"px";
 				map.style.width = map.getBoundingClientRect().width+"px";
+				map.style.transform = "scale("+1.00+")";
 			}
 			else if(e.deltaY > 0 && checkLeft == 1 && checkTop == 1 && checkRight == 1 && checkBot == 1 ) {
 				map.style.transform = "scale("+0.95+")";
@@ -142,6 +143,7 @@
 				map.style.left = map.getBoundingClientRect().left+"px";
 				map.style.height = map.getBoundingClientRect().height+"px";
 				map.style.width = map.getBoundingClientRect().width+"px";
+				map.style.transform = "scale("+1.00+")";
 			}
 		});
 
@@ -174,6 +176,7 @@
 							checkLeft = 1;
 						}
 						else{
+							map.style.left = 0;
 							checkLeft = 0;
 						}
 
@@ -181,6 +184,8 @@
 							checkRight = 1;
 						}
 						else{
+							console.log("duh");
+							map.style.left = -(mapWidth - window.innerWidth)+'px';
 							checkRight = 0;
 						}
 
@@ -188,6 +193,7 @@
 							checkBot = 1;
 						}
 						else{
+							map.style.top = -(mapHeight - window.innerHeight)+'px';
 							checkBot = 0;
 						}
 
@@ -195,6 +201,7 @@
 							checkTop = 1;
 						}
 						else{
+							map.style.top = 0;
 							checkTop = 0;
 						}
 
@@ -258,6 +265,7 @@
 				checkLeft = 1;
 			}
 			else{
+				map.style.left = 0;
 				checkLeft = 0;
 			}
 
@@ -265,6 +273,8 @@
 				checkRight = 1;
 			}
 			else{
+				console.log("duh");
+				map.style.left = -(mapWidth - window.innerWidth)+'px';
 				checkRight = 0;
 			}
 
@@ -272,6 +282,7 @@
 				checkBot = 1;
 			}
 			else{
+				map.style.top = -(mapHeight - window.innerHeight)+'px';
 				checkBot = 0;
 			}
 
@@ -279,6 +290,7 @@
 				checkTop = 1;
 			}
 			else{
+				map.style.top = 0;
 				checkTop = 0;
 			}
 
@@ -322,6 +334,7 @@
 					map.style.left = map.getBoundingClientRect().left+"px";
 					map.style.height = map.getBoundingClientRect().height+"px";
 					map.style.width = map.getBoundingClientRect().width+"px";
+					map.style.transform = "scale("+(1)+")";
 				}
 				else if(fdist < idist && checkLeft == 1 && checkTop == 1 && checkRight == 1 && checkBot == 1 ) {
 					map.style.transform = "scale("+(1-relChange)+")";
@@ -330,6 +343,7 @@
 					map.style.left = map.getBoundingClientRect().left+"px";
 					map.style.height = map.getBoundingClientRect().height+"px";
 					map.style.width = map.getBoundingClientRect().width+"px";
+					map.style.transform = "scale("+(1)+")";
 				}
 			}
 
